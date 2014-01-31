@@ -16,9 +16,9 @@ type Record struct {
 
 type Value interface{}
 
-//func (r Record) String() string {
-//	return fmt.Sprintf("%s", r)
-//}
+func (r Record) String() string {
+	return fmt.Sprintf("%s", r.Value)
+}
 
 func Parse(filename string) (*Config, error) {
 //	var r Record
@@ -90,7 +90,7 @@ func Parse(filename string) (*Config, error) {
 			keyParts := strings.Split(key, ".")
 
 			if(len(keyParts) > 1) {
-				var record *Record
+				var record *Record = &Record{}
 
 				for i, part := range keyParts {
 					switch {
@@ -98,25 +98,21 @@ func Parse(filename string) (*Config, error) {
 						fmt.Println("hello", i)
 
 						if _, ok := config[activeSection][part]; ok {
-							r := config[activeSection][part]
-							record = &r
+							*record = config[activeSection][part]
 						} else {
 							record = &Record{Value:make(map[string]Record)}
 							config[activeSection][part] = *record
 						}
 					case (i+1) < len(keyParts):
 						fmt.Println("hello", i)
-						tmpMap := record.Value.(map[string]Record)
 
 						// if the branch was not yet created
-						if _, ok := tmpMap[part]; ok {
-							fmt.Println("Exist", part)
-							r := tmpMap[part]
-							record = &r
+						if _, ok := record.Value.(map[string]Record)[part]; ok {
+							*record = record.Value.(map[string]Record)[part]
 						} else {
-							fmt.Println("Doesn't exist", part)
+							// if the subsection does not exist
 							tmp := Record{Value:make(map[string]Record)}
-							tmpMap[part]= tmp
+							record.Value.(map[string]Record)[part]= tmp
 							record = &tmp
 						}
 						fmt.Printf("%v\n", config)
