@@ -5,17 +5,28 @@ import (
 	"os"
 	"errors"
 	"io/ioutil"
-	//"regexp"
 	"strings"
-	//"reflect"
-	"reflect"
 )
 
 type Config map[string]Section
 type Section map[string]Record
-type Record interface{}
+type Record struct {
+	Value Value
+}
+
+type Value interface{}
+
+//func (r Record) String() string {
+//	return fmt.Sprintf("%s", r)
+//}
 
 func Parse(filename string) (*Config, error) {
+//	var r Record
+//	r.Value = "hello 22"
+//	fmt.Println(r.Value)
+//
+//	return &Config{}, nil
+//
 	var err error
 
 	// check if file exists
@@ -45,8 +56,6 @@ func Parse(filename string) (*Config, error) {
 			// it's a section
 			sectionName := line[1:len(line)-1]
 			sectionParts := strings.Split(sectionName, ":")
-
-			fmt.Println("section parts: ", sectionParts)
 
 			if(len(sectionParts) > 2) {
 				return nil, errors.New(fmt.Sprintf("Only one parent section is allowed, line: %s (%s)", i, line))
@@ -81,33 +90,49 @@ func Parse(filename string) (*Config, error) {
 			keyParts := strings.Split(key, ".")
 
 			if(len(keyParts) > 1) {
-				var record map[string]Record
-
-				record = make(map[string]Record)
-				config[activeSection] = record
+				var record *Record
 
 				for i, part := range keyParts {
-					if((i+1) < len(keyParts)) {
-						tmp := make(map[string]Record)
+					switch {
+					case i == 0:
+						fmt.Println("hello", i)
+						record = &Record{Value:make(map[string]Record)}
 
-						record[part] = tmp
-						record = tmp
+						config[activeSection][part] = *record
+					case (i+1) < len(keyParts):
+						fmt.Println("hello", i)
+						tmpMap := record.Value.(map[string]Record)
 
-					} else {
-						record[part] = value
+						// if the branch was not yet created
+						if _, ok := tmpMap[part]; ok {
+							fmt.Println("Exist", part)
+							r := tmpMap[part]
+							record = &r
+						} else {
+							fmt.Println("Doesn't exist", part)
+							tmp := Record{Value:make(map[string]Record)}
+							tmpMap[part]= tmp
+							record = &tmp
+						}
+						fmt.Printf("%v\n", config)
+					case (i+1) == len(keyParts):
+						fmt.Println("hello", i)
+//
+//						record.Value = value
+						//fmt.Printf("Here I am %v\n", record.Value)
+						finalMap := record.Value.(map[string]Record)
+						finalMap[part] = Record{Value:value}
+
 					}
 				}
-
-				fmt.Println(keyParts[0], config[activeSection][keyParts[0]])
 			} else {
-				config[activeSection][key] = value
+				config[activeSection][key] = Record{Value:value}
 			}
 		}
 
 	}
 
+	fmt.Printf("%v", config)
 
-	fmt.Printf("ggg %v", config)
-
-	return &Config{}, nil
+	return &config, nil
 }

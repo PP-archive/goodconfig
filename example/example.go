@@ -12,5 +12,5 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Println(Config)
+	fmt.Println("Config: ", Config)
 }
