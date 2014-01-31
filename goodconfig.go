@@ -96,9 +96,14 @@ func Parse(filename string) (*Config, error) {
 					switch {
 					case i == 0:
 						fmt.Println("hello", i)
-						record = &Record{Value:make(map[string]Record)}
 
-						config[activeSection][part] = *record
+						if _, ok := config[activeSection][part]; ok {
+							r := config[activeSection][part]
+							record = &r
+						} else {
+							record = &Record{Value:make(map[string]Record)}
+							config[activeSection][part] = *record
+						}
 					case (i+1) < len(keyParts):
 						fmt.Println("hello", i)
 						tmpMap := record.Value.(map[string]Record)
@@ -117,12 +122,8 @@ func Parse(filename string) (*Config, error) {
 						fmt.Printf("%v\n", config)
 					case (i+1) == len(keyParts):
 						fmt.Println("hello", i)
-//
-//						record.Value = value
-						//fmt.Printf("Here I am %v\n", record.Value)
-						finalMap := record.Value.(map[string]Record)
-						finalMap[part] = Record{Value:value}
 
+						record.Value.(map[string]Record)[part] = Record{Value:value}
 					}
 				}
 			} else {
