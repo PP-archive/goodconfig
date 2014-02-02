@@ -53,18 +53,24 @@ func (c *Config) Get(key string) *Record {
 	return c.Section(c.defaultSection).Get(key)
 }
 
+// struct which describes the section inside the *.ini file
 type Section struct {
 	config *Config
 	Value map[string]Record
 }
 
+// struct which describes the record
+// Record Value could be a map of other records
 type Record struct {
 	config *Config
 	Value Value
 }
 
+// struct which describes the Value
+// Value is the final entity in the config hierarchy
 type Value interface{}
 
+// returns the Section by key
 func (c *Config) Section(key string) *Section {
 	if _, ok := c.Sections[key]; ok {
 		s := c.Sections[key]
@@ -75,6 +81,7 @@ func (c *Config) Section(key string) *Section {
 	}
 }
 
+// returns the Record of the Section by key
 func (s *Section) Get(key string) *Record {
 	if _, ok := s.Value[key]; ok {
 		r := s.Value[key]
@@ -85,6 +92,7 @@ func (s *Section) Get(key string) *Record {
 	}
 }
 
+// returns the Record by key (which is located inside the other Record)
 func (r *Record) Get(key string) *Record {
 	switch r.Value.(type) {
 	case map[string]Record:
@@ -101,37 +109,46 @@ func (r *Record) Get(key string) *Record {
 	}
 }
 
+// returns the Value casted to string
 func (r Record) ToString() string {
 	stringValue := fmt.Sprintf("%s", r.Value)
 	return stringValue
 }
 
+// returns the Value casted to int
 func (r Record) ToInt() int {
 	intValue, _ := strconv.Atoi(r.Value.(string))
 	return intValue
 }
 
+// returns the Value casted to float64
 func (r Record) ToFloat() float64 {
 	floatValue, _ := strconv.ParseFloat(r.Value.(string),64)
 	return floatValue
 }
 
+// returns the Value casted to bool
 func (r Record) ToBool() bool {
 	boolValue, _ := strconv.ParseBool(r.Value.(string))
 
 	return boolValue
 }
 
+// returns the Value casted to map[string]Record
 func (r Record) ToMap() map[string]Record {
 	mapValue := r.Value.(map[string]Record)
 
 	return mapValue
 }
 
+// creates the new Config object
 func NewConfig() *Config {
 	return &Config{}
 }
 
+// parses the ini formatted file (filename)
+// builds the hierarchy of Sections and Records
+// after the Parse, you are able to use the Get methods
 func (c *Config) Parse(filename string) (error) {
 
 	fmt.Println("c address: ", &c)
