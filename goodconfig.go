@@ -13,11 +13,9 @@ import (
 
 // Config structure describes the overall configuration object structure
 type Config struct {
-	// it's possible to set the default section using the SetDefaultSection function
 	defaultSection string
 	// the map of sections
 	Sections       map[string]Section
-	// the array which stores the errors
 	errors         []error
 }
 

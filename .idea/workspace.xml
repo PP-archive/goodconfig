@@ -64,19 +64,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="goodconfig.go" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/goodconfig.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="106" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.5738636" vertical-offset="503" max-vertical-offset="3735">
-              <folding />
-            </state>
+      <file leaf-file-name="Readme.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Readme.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="atof.go" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/pkg/strconv/atof.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="532" column="5" selection-start="11159" selection-end="11159" vertical-scroll-proportion="0.0" vertical-offset="7677" max-vertical-offset="8190">
+            <state line="13" column="0" selection-start="211" selection-end="211" vertical-scroll-proportion="0.3857143" vertical-offset="60" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -130,7 +124,16 @@
       <file leaf-file-name="application.ini" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/config/application.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="86" selection-end="97" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="255">
+            <state line="0" column="0" selection-start="0" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goodconfig.go" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/goodconfig.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="15" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="3705">
               <folding />
             </state>
           </provider>
@@ -139,7 +142,7 @@
       <file leaf-file-name="example.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/example.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+            <state line="20" column="42" selection-start="367" selection-end="405" vertical-scroll-proportion="-4.5" vertical-offset="183" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -167,13 +170,14 @@
         <option value="$PROJECT_DIR$/example/config/application.ini" />
         <option value="$PROJECT_DIR$/example/example.go" />
         <option value="$PROJECT_DIR$/goodconfig.go" />
+        <option value="$PROJECT_DIR$/Readme.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="708" />
+    <option name="height" value="706" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -253,8 +257,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,6 +272,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -472,18 +477,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="708" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="706" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="go fmt Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286385" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32810047" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -494,14 +498,15 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="go fmt Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286385" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -517,11 +522,149 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/goodconfig.go">
+    <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="41" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115">
+        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strconv/atof.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="532" column="5" selection-start="11159" selection-end="11159" vertical-scroll-proportion="0.0" vertical-offset="7677" max-vertical-offset="8190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strconv/atoi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="5" selection-start="4262" selection-end="4262" vertical-scroll-proportion="0.0" vertical-offset="2419" max-vertical-offset="3030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="829" column="22" selection-start="21294" selection-end="21294" vertical-scroll-proportion="0.0" vertical-offset="12435" max-vertical-offset="15765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/encoding/json/scanner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="18" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.0" vertical-offset="1754" max-vertical-offset="9435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strings/strings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="612" column="5" selection-start="15958" selection-end="15958" vertical-scroll-proportion="0.0" vertical-offset="8884" max-vertical-offset="10965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="5" selection-start="4721" selection-end="4721" vertical-scroll-proportion="0.0" vertical-offset="1792" max-vertical-offset="3930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/config/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="86" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goodconfig.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strconv/atof.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="532" column="5" selection-start="11159" selection-end="11159" vertical-scroll-proportion="0.0" vertical-offset="7677" max-vertical-offset="8190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strconv/atoi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="5" selection-start="4262" selection-end="4262" vertical-scroll-proportion="0.0" vertical-offset="2419" max-vertical-offset="3030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="829" column="22" selection-start="21294" selection-end="21294" vertical-scroll-proportion="0.0" vertical-offset="12435" max-vertical-offset="15765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/encoding/json/scanner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="18" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.0" vertical-offset="1754" max-vertical-offset="9435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/strings/strings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="612" column="5" selection-start="15958" selection-end="15958" vertical-scroll-proportion="0.0" vertical-offset="8884" max-vertical-offset="10965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/pkg/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="5" selection-start="4721" selection-end="4721" vertical-scroll-proportion="0.0" vertical-offset="1792" max-vertical-offset="3930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/config/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="86" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goodconfig.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goodconfig.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="41" selection-start="2805" selection-end="2805" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2115" />
       </provider>
     </entry>
     <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
@@ -568,9 +711,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2164" selection-end="2164" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1785">
-          <folding />
-        </state>
+        <state line="93" column="0" selection-start="2164" selection-end="2164" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
@@ -617,9 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
+        <state line="25" column="25" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495" />
       </provider>
     </entry>
     <entry file="file:///usr/local/go/src/pkg/builtin/builtin.go">
@@ -694,21 +833,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/config/application.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="86" selection-end="97" vertical-scroll-proportion="-3.4615386" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/example.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+        <state line="0" column="0" selection-start="0" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="106" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.5738636" vertical-offset="503" max-vertical-offset="3735">
+        <state line="17" column="15" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="3705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/example.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="42" selection-start="367" selection-end="405" vertical-scroll-proportion="-4.5" vertical-offset="183" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="211" selection-end="211" vertical-scroll-proportion="0.3857143" vertical-offset="60" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
