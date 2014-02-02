@@ -16,6 +16,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	fmt.Println("Config [production]: ", Config.Section("production").Get("parent"))
+	fmt.Println("---")
+	fmt.Println("Config [development]: ", Config.Section("development").Get("parent"))
+	return
+
 	Config.SetDefaultSection("development")
 
 	intValue := Config.Get("intValue").ToInt()

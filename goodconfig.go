@@ -9,6 +9,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"reflect"
 )
 
 // Config structure describes the overall configuration object structure
@@ -203,11 +204,23 @@ func (c *Config) Parse(filename string) (error) {
 					return errors.New(fmt.Sprintf("The parent section was not declared yet, line: %s (%s)", i, line))
 				}
 
-				//c.Sections[activeSection] = c.Sections[parentSection]
+				c.Sections[activeSection] = c.Sections[parentSection]
 
+				/*fmt.Println(c.Sections[activeSection])
 				for k, v := range c.Sections[parentSection].Value {
 					c.Sections[activeSection].Value[k] = v
-				}
+				}*/
+
+
+//				r := c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"]
+//				fmt.Println(r)
+//				r.Value = 111
+//
+//				fmt.Println(r)
+//
+				fmt.Println(reflect.TypeOf(c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"]))
+//				fmt.Println(c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"])
+//				os.Exit(1)
 			}
 		default:
 			// seems this is a simple config value
@@ -238,14 +251,14 @@ func (c *Config) Parse(filename string) (error) {
 							c.Sections[activeSection].Value[part] = *record
 						}
 					case (i + 1) < len(keyParts):
-						// if the branch was not yet created
+						// whether the branch was not yet created
 						if _, ok := record.Value.(map[string]Record)[part]; ok {
 							*record = record.Value.(map[string]Record)[part]
 						} else {
 							// if the subsection does not exist
-							tmp := Record{config: c, Value: make(map[string]Record)}
-							record.Value.(map[string]Record)[part] = tmp
-							record = &tmp
+							var newRecord *Record = &Record{config: c, Value: make(map[string]Record)}
+							record.Value.(map[string]Record)[part] = *newRecord
+							record = newRecord
 						}
 					case (i + 1) == len(keyParts):
 						// if that was the last key
