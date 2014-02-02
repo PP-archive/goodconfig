@@ -64,27 +64,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Readme.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Readme.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="25" selection-start="382" selection-end="382" vertical-scroll-proportion="-7.2222223" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="atoi.go" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/pkg/strconv/atoi.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="5" selection-start="4262" selection-end="4262" vertical-scroll-proportion="0.0" vertical-offset="2419" max-vertical-offset="3030">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="decode.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,7 +112,25 @@
       <file leaf-file-name="goodconfig.go" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/goodconfig.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="29" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.7120419" vertical-offset="3417" max-vertical-offset="4245">
+            <state line="207" column="58" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.35648996" vertical-offset="2910" max-vertical-offset="4200">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="copier.go" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../jinzhu/copier/copier.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="19" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1455">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unsafe.go" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/pkg/unsafe/unsafe.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -855,9 +852,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/go/src/pkg/unsafe/unsafe.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../jinzhu/copier/copier.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="19" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="29" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.7120419" vertical-offset="3417" max-vertical-offset="4245">
+        <state line="207" column="58" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.35648996" vertical-offset="2910" max-vertical-offset="4200">
           <folding />
         </state>
       </provider>

@@ -204,12 +204,9 @@ func (c *Config) Parse(filename string) (error) {
 					return errors.New(fmt.Sprintf("The parent section was not declared yet, line: %s (%s)", i, line))
 				}
 
-				c.Sections[activeSection] = c.Sections[parentSection]
-
-				/*fmt.Println(c.Sections[activeSection])
 				for k, v := range c.Sections[parentSection].Value {
 					c.Sections[activeSection].Value[k] = v
-				}*/
+				}
 
 
 //				r := c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"]
