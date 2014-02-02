@@ -103,7 +103,7 @@
       <file leaf-file-name="goodconfig.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/goodconfig.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="24" selection-start="6919" selection-end="6919" vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4380">
+            <state line="257" column="24" selection-start="6919" selection-end="6919" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="4380">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,7 @@
       <file leaf-file-name="recursive.go" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recursive.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="20" selection-start="225" selection-end="225" vertical-scroll-proportion="0.35904256" vertical-offset="0" max-vertical-offset="885">
+            <state line="26" column="32" selection-start="448" selection-end="448" vertical-scroll-proportion="0.87603307" vertical-offset="72" max-vertical-offset="1515">
               <folding />
             </state>
           </provider>
@@ -520,7 +520,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="go fmt Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -895,7 +895,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recursive.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="225" selection-end="225" vertical-scroll-proportion="0.35904256" vertical-offset="0" max-vertical-offset="885">
+        <state line="26" column="32" selection-start="448" selection-end="448" vertical-scroll-proportion="0.87603307" vertical-offset="72" max-vertical-offset="1515">
           <folding />
         </state>
       </provider>
