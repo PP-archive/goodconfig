@@ -2,7 +2,7 @@
 package goodconfig provides the basic *.ini files parsing options and supports the sections inheritance
 
 ## Example
-The example of usage is located in the [/example](http://github.com/PavelPolyakov/goodconfig/example/) folder.
+The example of usage is located in the [/example](https://github.com/PavelPolyakov/goodconfig/tree/master/example) folder.
 
 ## Example in short
 **application.ini:**
