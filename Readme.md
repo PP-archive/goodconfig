@@ -1,4 +1,5 @@
 # Good config
+package goodconfig provides the basic *.ini files parsing options and supports the sections inheritance
 
 ## Example
 The example of usage is located in the http://github.com/PavelPolyakov/goodconfig/example/ folder.
@@ -12,7 +13,7 @@ hello_2 = 2
 parent.child.hello = 3
 parent.child.subchild = 3
 ```
-**part of the *go file**
+**part of the *.go file**
 ```Go
 Config := goodconfig.NewConfig()
 err := Config.Parse("./config/application.ini")
