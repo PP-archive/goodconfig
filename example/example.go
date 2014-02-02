@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/PavelPolyakov/goodconfig"
+	"os"
 	"reflect"
 )
 
@@ -12,36 +13,32 @@ func main() {
 
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 
-	fmt.Println("Key: ")
-	fmt.Println("full query:")
-	fmt.Println(Config.Section("production").Get("parent").Get("child").Get("subchild").ToInt())
+	Config.SetDefaultSection("development")
 
-	Config.SetDefaultSection("production")
-	fmt.Println("production:")
-	fmt.Println(Config.Get("parent").Get("child").Get("subchild").ToInt())
+	intValue := Config.Get("intValue").ToInt()
+	fmt.Println("intValue:", intValue, reflect.TypeOf(intValue));
 
+	boolValue := Config.Get("boolValue").ToBool()
+	fmt.Println("boolValue:", boolValue, reflect.TypeOf(boolValue));
 
-	fmt.Println(Config.Get("float").ToFloat(), reflect.TypeOf(Config.Get("float").ToFloat()))
+	stringValue := Config.Get("stringValue").ToString()
+	fmt.Println("stringValue:", stringValue, reflect.TypeOf(stringValue));
 
-	for key, _ := range Config.Get("parent").ToMap() {
-		fmt.Println("Key :" , key)
+	// incorrect call of the child key
+	incorrectChild := Config.Section("production").Get("parent").Get("chiled").ToString() // typo
+
+	if(Config.HasErrors()) {
+		fmt.Println(Config.GetErrors())
+		fmt.Println("Child: ", incorrectChild)
 	}
 
-	fmt.Println("bool value:")
-	v := Config.Get("parent").Get("child").Get("helloBool").ToBool()
-	fmt.Println(v, reflect.TypeOf(v))
+	// correct call of the child key
+	correctChild := Config.Section("production").Get("parent").Get("child").Get("subchild").ToString()
+	fmt.Println("Subchild:", correctChild)
 
-	tmp := Config.Get("parent").Get("chi44ld")
+	fmt.Println("Config: ", Config)
 
-	p := &Config
-	fmt.Println("Config address: ", p)
-
-
-	errs := Config.GetErrors()
-	fmt.Println("Tmp: ", tmp)
-	fmt.Println("Errors: ", errs)
-	fmt.Println("Errors: ", len(errs))
-	fmt.Println("Errors: ", len(Config.GetErrors()))
 }

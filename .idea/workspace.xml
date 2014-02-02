@@ -124,7 +124,7 @@
       <file leaf-file-name="application.ini" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/config/application.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="8" column="17" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -133,7 +133,7 @@
       <file leaf-file-name="goodconfig.go" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/goodconfig.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="36" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.9145299" vertical-offset="849" max-vertical-offset="3960">
+            <state line="247" column="41" selection-start="6704" selection-end="6704" vertical-scroll-proportion="0.53846157" vertical-offset="3502" max-vertical-offset="4050">
               <folding />
             </state>
           </provider>
@@ -142,7 +142,7 @@
       <file leaf-file-name="example.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/example.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="42" selection-start="367" selection-end="405" vertical-scroll-proportion="-4.5" vertical-offset="183" max-vertical-offset="795">
+            <state line="39" column="42" selection-start="1040" selection-end="1040" vertical-scroll-proportion="-9.461538" vertical-offset="339" max-vertical-offset="750">
               <folding />
             </state>
           </provider>
@@ -167,9 +167,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/example/config/application.ini" />
         <option value="$PROJECT_DIR$/example/example.go" />
-        <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/goodconfig.go" />
       </list>
     </option>
@@ -831,16 +831,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/config/application.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/example.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="42" selection-start="367" selection-end="405" vertical-scroll-proportion="-4.5" vertical-offset="183" max-vertical-offset="795">
+        <state line="39" column="42" selection-start="1040" selection-end="1040" vertical-scroll-proportion="-9.461538" vertical-offset="339" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
@@ -855,9 +848,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/config/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="36" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.9145299" vertical-offset="849" max-vertical-offset="3960">
+        <state line="247" column="41" selection-start="6704" selection-end="6704" vertical-scroll-proportion="0.53846157" vertical-offset="3502" max-vertical-offset="4050">
           <folding />
         </state>
       </provider>

@@ -35,6 +35,11 @@ func (c *Config) AddError(e error) {
 	c.errors = append(c.errors, e)
 }
 
+// check if there are yet unseen errors
+func (c *Config) HasErrors() bool {
+	return len(c.errors) > 0
+}
+
 // get all the available errors and clear the errors array
 func (c *Config) GetErrors() []error {
 	errors := c.errors
@@ -150,9 +155,6 @@ func NewConfig() *Config {
 // builds the hierarchy of Sections and Records
 // after the Parse, you are able to use the Get methods
 func (c *Config) Parse(filename string) (error) {
-
-	fmt.Println("c address: ", &c)
-
 	var err error
 
 	// check if file exists
@@ -201,7 +203,11 @@ func (c *Config) Parse(filename string) (error) {
 					return errors.New(fmt.Sprintf("The parent section was not declared yet, line: %s (%s)", i, line))
 				}
 
-				c.Sections[activeSection] = c.Sections[parentSection]
+				//c.Sections[activeSection] = c.Sections[parentSection]
+
+				for k, v := range c.Sections[parentSection].Value {
+					c.Sections[activeSection].Value[k] = v
+				}
 			}
 		default:
 			// seems this is a simple config value
