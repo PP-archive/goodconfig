@@ -59,14 +59,14 @@ type Section struct {
 	Value map[string]Record
 }
 
-// struct which describes the record
+// struct which describes the record,
 // Record Value could be a map of other records
 type Record struct {
 	config *Config
 	Value Value
 }
 
-// struct which describes the Value
+// struct which describes the Value,
 // Value is the final entity in the config hierarchy
 type Value interface{}
 
