@@ -206,6 +206,18 @@ func (c *Config) Parse(filename string) (error) {
 
 				for k, v := range c.Sections[parentSection].Value {
 					c.Sections[activeSection].Value[k] = v
+
+					recursiveCopy := func(reciever *Record, r Record) *Record {
+						switch r.Value.(type) {
+						case map[string]Record:
+							for k,v := range r.Value.(map[string]Record) {
+								receiver.Value[k] = recursiveCopy(r)
+							}
+							return
+						default:
+							return r.Value
+						}
+					}
 				}
 
 

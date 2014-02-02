@@ -64,15 +64,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="decode.go" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/pkg/encoding/json/decode.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="829" column="22" selection-start="21294" selection-end="21294" vertical-scroll-proportion="0.0" vertical-offset="12435" max-vertical-offset="15765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scanner.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file:///usr/local/go/src/pkg/encoding/json/scanner.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,10 +100,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goodconfig.go" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="goodconfig.go" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/goodconfig.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="58" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.35648996" vertical-offset="2910" max-vertical-offset="4200">
+            <state line="257" column="24" selection-start="6919" selection-end="6919" vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4380">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recursive.go" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recursive.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="33" selection-start="179" selection-end="179" vertical-scroll-proportion="0.27925533" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -168,6 +168,7 @@
         <option value="$PROJECT_DIR$/example/config/application.ini" />
         <option value="$PROJECT_DIR$/example/example.go" />
         <option value="$PROJECT_DIR$/goodconfig.go" />
+        <option value="$PROJECT_DIR$/recursive.go" />
       </list>
     </option>
   </component>
@@ -270,13 +271,32 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Application.recursive.go">
+    <configuration default="false" name="recursive.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <option name="name" value="recursive.go" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <option name="scriptName" value="$PROJECT_DIR$/recursive.go" />
+      <option name="scriptArguments" value="" />
+      <option name="builderArguments" value="" />
+      <option name="goBuildBeforeRun" value="false" />
+      <option name="goOutputDir" value="" />
+      <option name="workingDir" value="$PROJECT_DIR$" />
+      <option name="envVars" value="" />
+      <option name="goVetEnabled" value="false" />
+      <module name="goodconfig" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -441,7 +461,14 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Go Application.recursive.go" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Go Application.recursive.go" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -493,7 +520,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="go fmt Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -519,13 +546,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/pkg/strconv/atof.go">
       <provider selected="true" editor-type-id="text-editor">
         <state line="532" column="5" selection-start="11159" selection-end="11159" vertical-scroll-proportion="0.0" vertical-offset="7677" max-vertical-offset="8190">
@@ -868,7 +888,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/goodconfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="58" selection-start="5453" selection-end="5453" vertical-scroll-proportion="0.35648996" vertical-offset="2910" max-vertical-offset="4200">
+        <state line="257" column="24" selection-start="6919" selection-end="6919" vertical-scroll-proportion="0.0" vertical-offset="2884" max-vertical-offset="4380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recursive.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="179" selection-end="179" vertical-scroll-proportion="0.27925533" vertical-offset="0" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
