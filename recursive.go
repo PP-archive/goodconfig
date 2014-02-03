@@ -24,18 +24,27 @@ type Record struct {
 
 type Value interface{}
 
-func (r *Record) Fill(key string, rParent Record) {
+func (r *Record) Fill(rParent Record) {
 	switch rParent.Value.(type) {
 	case map[string]Record:
-		fmt.Println("hello")
-		//os.Exit(1)
-		r.Value.(map[string]Record)[key] = Record{Value:make(map[string]Record)}
-	for k,v := range rParent.Value.(map[string]Record) {
-		nextR := r.Value.(map[string]Record)[key]
-		nextR.Fill(k, v)
-	}
+		for k, v := range rParent.Value.(map[string]Record) {
+				// defining the type of the child Value element
+				switch v.Value.(type) {
+					case map[string]Record:
+					r.Value.(map[string]Record)[k] = Record{Value:make(map[string]Record)}
+				case map[string]interface{}:
+					r.Value.(map[string]Record)[k] = Record{Value:make(map[string]interface{})}
+					default:
+				}
+
+				nextR := r.Value.(map[string]Record)[k]
+				nextR.Fill(v)
+		}
+	case map[string]interface{}:
+		for k, v := range rParent.Value.(map[string]interface{}) {
+			r.Value.(map[string]interface{})[k] = v
+		}
 	default:
-		r.Value.(map[string]Record)[key] = Record{Value:rParent.Value}
 	}
 }
 
@@ -51,10 +60,12 @@ func main() {
 
 	rChild := Record{Value:make(map[string]Record)}
 
-	rChild.Fill("first", r.Value.(map[string]Record)["first"])
+	fmt.Println("before: ", rChild)
+	rChild.Fill(r)
 
-	fmt.Println(rChild)
-//	fmt.Println(rChild.Value.(map[string]Record)["first"].Value.(map[string]Record)["second"])
+	fmt.Println("after: ", rChild)
+	rChild.Value.(map[string]Record)["first"].Value.(map[string]Record)["second"].Value.(map[string]interface{})["third"] = 333
+	fmt.Println(rChild.Value.(map[string]Record)["first"].Value.(map[string]Record)["second"].Value.(map[string]interface{})["third"])
 	return
 
 

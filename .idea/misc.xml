@@ -16,7 +16,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Go SDK devel +75adcf310434 Thu Jan 23 19:56:59 2014 +0400 darwin/amd64" project-jdk-type="Google Go SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Go SDK go1.2 darwin/386" project-jdk-type="Google Go SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RunManager">
