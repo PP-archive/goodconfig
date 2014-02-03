@@ -9,6 +9,7 @@ import (
 
 func main() {
 	Config := goodconfig.NewConfig()
+
 	err := Config.Parse("./config/application.ini")
 
 	if err != nil {
