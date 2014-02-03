@@ -2,13 +2,49 @@ package goodconfig
 
 import (
 	"testing"
+	"io/ioutil"
 	. "github.com/smartystreets/goconvey/convey"
+	"os"
 )
 
 func TestGoodConfig(t *testing.T) {
 
+	application_ini := `[production]
+intValue = 33
+boolValue = true
+;comment here
+stringValue = string me!
+parent.child.subchild = hello
+parent.child.subchild_2 = hello_2
+
+[development : production]
+boolValue = false
+;comment here
+stringValue = string me!
+parent.child.subchild = bye`
+
+	configFile, configFileErr := ioutil.TempFile("./", "config_")
+
+	if configFileErr != nil {
+		panic(configFileErr)
+		return
+	}
+
+	deferConfigFile := func() {
+		os.Remove(configFile.Name())
+		configFile.Close()
+	}
+
+	defer deferConfigFile()
+
+	// store the config to the file
+	configFile.Write([]byte(application_ini))
+
+
+
+
 	Config := NewConfig()
-	err := Config.Parse("./example/config/application.ini")
+	err := Config.Parse(configFile.Name())
 
 	Convey("Parse example/application.ini without errors", t, func(){
 			So(err, ShouldEqual, nil)
