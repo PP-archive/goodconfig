@@ -9,7 +9,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"reflect"
 )
 
 // Config structure describes the overall configuration object structure
@@ -97,6 +96,46 @@ func (s *Section) Get(key string) *Record {
 		return &Record{}
 	}
 }
+
+// fill the section with the other section, so we receive the copy of the maps, not the pointers
+func (s *Section) Fill(sParent Section) {
+	for k, v := range sParent.Value {
+		// defining the type of the child Value element
+		switch v.Value.(type) {
+		case map[string]Record:
+			s.Value[k] = Record{config: sParent.config, Value:make(map[string]Record)}
+
+			nextR := s.Value[k]
+			nextR.Fill(v)
+		default:
+			s.Value[k] = v
+		}
+
+	}
+}
+
+
+// fill the record with the other record, so we receive the copy of the maps, not the pointers
+func (r *Record) Fill(rParent Record) {
+	switch rParent.Value.(type) {
+	case map[string]Record:
+	for k, v := range rParent.Value.(map[string]Record) {
+		// defining the type of the child Value element
+		switch v.Value.(type) {
+		case map[string]Record:
+			r.Value.(map[string]Record)[k] = Record{config: rParent.config, Value:make(map[string]Record)}
+
+			nextR := r.Value.(map[string]Record)[k]
+			nextR.Fill(v)
+		default:
+			r.Value.(map[string]Record)[k] = v
+		}
+	}
+	default:
+	r.Value = rParent.Value
+	}
+}
+
 
 // returns the Record by key (which is located inside the other Record)
 func (r *Record) Get(key string) *Record {
@@ -204,31 +243,17 @@ func (c *Config) Parse(filename string) (error) {
 					return errors.New(fmt.Sprintf("The parent section was not declared yet, line: %s (%s)", i, line))
 				}
 
-				for k, v := range c.Sections[parentSection].Value {
-					c.Sections[activeSection].Value[k] = v
-
-					recursiveCopy := func(reciever *Record, r Record) *Record {
-						switch r.Value.(type) {
-						case map[string]Record:
-							for k,v := range r.Value.(map[string]Record) {
-								receiver.Value[k] = recursiveCopy(r)
-							}
-							return
-						default:
-							return r.Value
-						}
-					}
-				}
+				// filling the child section
+				activeSectionVariable := c.Sections[activeSection]
+				parentSectionVariable := c.Sections[parentSection]
 
 
-//				r := c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"]
-//				fmt.Println(r)
-//				r.Value = 111
-//
-//				fmt.Println(r)
-//
-				fmt.Println(reflect.TypeOf(c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"]))
-//				fmt.Println(c.Sections[activeSection].Value["parent"].Value.(map[string]Record)["child"].Value.(map[string]Record)["subchild"])
+				// actually the filling process
+				activeSectionVariable.Fill(parentSectionVariable)
+
+//				fmt.Println("active: ", activeSectionVariable)
+//				fmt.Println("---")
+//				fmt.Println("parent: ", parentSectionVariable)
 //				os.Exit(1)
 			}
 		default:
