@@ -8,10 +8,18 @@ The example of usage is located in the [/example](https://github.com/PavelPolyak
 **application.ini:**
 ```
 [production]
-hello = 1
-hello_2 = 2
-parent.child.hello = 3
-parent.child.subchild = 3
+intValue = 33
+boolValue = true
+;comment here
+stringValue = string me!
+parent.child.subchild = hello
+parent.child.subchild_2 = hello_2
+
+[development : production]
+boolValue = false
+;comment here
+stringValue = string me!
+parent.child.subchild = bye
 ```
 **part of the *.go file**
 ```Go
@@ -23,5 +31,8 @@ if err != nil {
 }
 
 Config.SetDefaultSection("production")
-fmt.Println(Config.Get("parent").Get("child").Get("subchild").ToInt())
+fmt.Println(Config.Get("parent").Get("child").Get("subchild").ToString())
+
+// or
+fmt.Println(Config.Section("development").Get("parent").Get("child").Get("subchild").ToString())
 ```
