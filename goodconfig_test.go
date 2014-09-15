@@ -94,10 +94,50 @@ parent.child.subchild = bye`
 					Convey("Should store the errors while getting the nested value", func() {
 							So(Config.Section("production").Get("parent").Get("childdd"), ShouldHaveSameTypeAs, &Record{})
 							So(Config.HasErrors(), ShouldEqual, true)
+							/* Added test to clear the errors list */
+							So(Config.GetErrors()[0].Error(), ShouldEqual, "There is no Record for key 'childdd'")
 						})
 					Convey("Should correctly process the defaultSection", func() {
 							Config.SetDefaultSection("development")
 							So(Config.Get("boolValue").ToBool(), ShouldEqual, false)
+						})
+				})
+			Convey("Existence", func() {
+					Convey("Shold check the existing value without error", func(){
+							So(Config.Section("production").Get("parent").Get("child").Has("subchild"), ShouldEqual, true)
+							So(Config.HasErrors(), ShouldEqual, false)
+						})
+					Convey("Shold check the miss named value without error", func(){
+							So(Config.Section("production").Get("parent").Get("child").Has("subchildd"), ShouldEqual, false)
+							So(Config.HasErrors(), ShouldEqual, false)
+						})
+					Convey("Shold check the existing section without error", func(){
+							So(Config.HasSection("production"), ShouldEqual, true)
+							So(Config.HasErrors(), ShouldEqual, false)
+						})
+					Convey("Shold check the miss named section without error", func(){
+							So(Config.HasSection("productionn"), ShouldEqual, false)
+							So(Config.HasErrors(), ShouldEqual, false)
+						})
+				})
+			Convey("Iteration", func() {
+					Convey("Shold discover all subchildren", func() {
+							a := make(map[string]string)
+							Config.Section("production").Get("parent").Get("child").Each(func(key string, v Value) {
+								a[key] = v.(string)
+							})
+
+							So(a["subchild"], ShouldEqual, "hello")
+							So(a["subchild_2"], ShouldEqual, "hello_2")
+						})
+					Convey("Shold discover all sections", func() {
+							a := make(map[string]bool)
+							Config.EachSection(func(key string, v Value) {
+								a[key] = true
+							})
+
+							So(a["production"], ShouldEqual, true)
+							So(a["development"], ShouldEqual, true)
 						})
 				})
 		})

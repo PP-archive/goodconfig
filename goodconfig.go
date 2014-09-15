@@ -19,6 +19,9 @@ type Config struct {
 	errors         []error
 }
 
+// EachCallback function interface, accepts a key name and a Record/Section, and allows interaction with each child Record
+type EachCallback func(string, Value)
+
 // passing the default section key to this function, you will set the defaultSection for the certain config object
 // after setting the defaultSection, you are able to call Get method directly for the config object
 func (c *Config) SetDefaultSection(key string) error {
@@ -58,6 +61,22 @@ func (c *Config) Get(key string) *Record {
 	return c.Section(c.defaultSection).Get(key)
 }
 
+// check if the Record which is stored by the key exists (from Config level)
+func (c *Config) Has(key string) bool {
+	if len(c.defaultSection) > 0 {
+		return c.Section(c.defaultSection).Has(key)
+	}
+
+	return false
+}
+// gives the ability to iterate over the default section's Records
+func (c *Config) Each(fnc EachCallback) {
+	if len(c.defaultSection) > 0 {
+		s := c.Section(c.defaultSection)
+		s.Each(fnc)
+	}
+}
+
 // struct which describes the section inside the *.ini file
 type Section struct {
 	config *Config
@@ -86,6 +105,22 @@ func (c *Config) Section(key string) *Section {
 	}
 }
 
+// checks if the specified Section exists under the specified key
+func (c *Config) HasSection(key string) bool {
+	if _, ok := c.Sections[key]; ok {
+		return true
+	}
+
+	return false
+}
+
+// gives the ability to iterate over all Config Sections
+func (c *Config) EachSection(fnc EachCallback) {
+	for idx, s := range c.Sections {
+		fnc(idx, s.Value)
+	}
+}
+
 // returns the Record of the Section by key
 func (s *Section) Get(key string) *Record {
 	if _, ok := s.Value[key]; ok {
@@ -94,6 +129,22 @@ func (s *Section) Get(key string) *Record {
 	} else {
 		s.config.AddError(errors.New(fmt.Sprintf("There is no Record for key '%s'", key)))
 		return &Record{}
+	}
+}
+
+// checks if the Record of the Section exists under the specified key
+func (s *Section) Has(key string) bool {
+	if _, ok := s.Value[key]; ok {
+		return true
+	}
+
+	return false
+}
+
+// gives the ability to iterate over all Records of this Section
+func (s *Section) Each(fnc EachCallback) {
+	for idx, val := range s.Value {
+		fnc(idx, val.Value)
 	}
 }
 
@@ -132,7 +183,7 @@ func (r *Record) Fill(rParent Record) {
 		}
 	}
 	default:
-	r.Value = rParent.Value
+		r.Value = rParent.Value
 	}
 }
 
@@ -151,6 +202,33 @@ func (r *Record) Get(key string) *Record {
 	default:
 		r.config.AddError(errors.New(fmt.Sprintf("The Record value is incorrect", key)))
 		return &Record{}
+	}
+}
+
+// checks if the Record contains a Record under the specified key
+func (r *Record) Has(key string) bool {
+	var found bool
+	switch r.Value.(type) {
+	case map[string]Record:
+		if _, ok := r.Value.(map[string]Record)[key]; ok {
+			found = true
+		}
+	default:
+		found = false
+	}
+
+	return found
+}
+
+// iterates over all Records in the current Record
+func (r *Record) Each(fnc EachCallback) {
+	switch r.Value.(type) {
+	case map[string]Record:
+	for idx, val := range r.Value.(map[string]Record) {
+		fnc(idx, val.Value)
+	}
+		break
+	default:
 	}
 }
 
@@ -251,10 +329,10 @@ func (c *Config) Parse(filename string) (error) {
 				// actually the filling process
 				activeSectionVariable.Fill(parentSectionVariable)
 
-//				fmt.Println("active: ", activeSectionVariable)
-//				fmt.Println("---")
-//				fmt.Println("parent: ", parentSectionVariable)
-//				os.Exit(1)
+				//				fmt.Println("active: ", activeSectionVariable)
+				//				fmt.Println("---")
+				//				fmt.Println("parent: ", parentSectionVariable)
+				//				os.Exit(1)
 			}
 		default:
 			// seems this is a simple config value
